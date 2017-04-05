@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+    <meta charset="UTF-8">
+    <title>RDTools - {{ title }}</title>
+</head>
+<body>
+    <div class="header">
+        <a href="/">home</a> | <a href="/population">počet obyvatel</a> | <a href="/discussion">diskuse</a>
+    </div>
+    {% for message in get_flashed_messages() %}
+            {{ message }}<br>
+        {% endfor %}
+    {% block content %}{% endblock %}
+    <div class="footer">
+        Tohle dělá <a href="https://twitter.com/waal42">Wal</a>. Feedback napište <a href="/discussion">sem</a>.
+    </div>
+</body>
+</html>

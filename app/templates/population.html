@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Počítadlo obyvatelstva</h1>
+    <div>Hele je to úplně easy, navolíš si stav gubu a ono to samo spočítá maximum lidí, který můžeš mít.</div>
+    <form action="" method="post" name="population">
+        {{ form.hidden_tag() }}
+        <table>
+            <tr><td>Vyber rasu:</td> <td>{{ form.race() }}</td></tr>
+            <tr><td>Rozloha gubu:</td> <td>{{ form.lands(size=8) }}</td></tr>
+            <tr><td>Počet domků gubu:</td> <td>{{ form.houses(size=8) }}</td></tr>
+            <tr><td>Popka gubu:</td> <td>{{ form.popularity(size=3) }}</td></tr>
+            <tr><td>Stojí vodárna?</td> <td>{{ form.vodarna() }}</td></tr>
+            <tr><td>Stojí norák?</td> <td>{{ form.norak() }}</td></tr>
+            <tr><td>Stojí kanalizace?</td> <td>{{ form.kanaly() }}</td></tr>
+            <tr><td>Stojí vodotok?</td> <td>{{ form.vodotok() }}</td></tr>
+        <tr><td><input type="submit" value="Spočítej"></td> <td></td></tr>
+        <tr><td><span id="bold">Počet obyvatel:</span></td> <td>{{ form.people(size=8) }}</td></tr>
+        </table>
+    </form>
+{% endblock %}
